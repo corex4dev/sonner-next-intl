@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "sonner-next-intl",
   "private": true,
   "scripts": {
     "build": "turbo run build",
