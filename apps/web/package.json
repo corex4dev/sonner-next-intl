@@ -13,8 +13,11 @@
   "dependencies": {
     "@repo/ui": "workspace:*",
     "next": "^16.0.1",
+    "next-intl": "^4.5.6",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "sonner": "^2.0.7",
+    "sonner-next-intl": "workspace:*"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

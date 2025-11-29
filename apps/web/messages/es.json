@@ -1,0 +1,56 @@
+{
+  "notifications": {
+    "alert": {
+      "first": "Primera notificación de alerta",
+      "second": "Segunda notificación de alerta"
+    },
+    "greeting": "Hola {name}",
+    "other": "Una notificación diferente"
+  },
+  "outOfBlock": "Este mensaje está fuera del bloque de notificaciones",
+  "TriggerToast": "Lanzar notificación",
+  "Error": {
+    "description": "<p>Lamentablemente, hemos encontrado un error.</p><p>Puede intentar <retry>recargar la página</retry> que estaba visitando.</p>",
+    "title": "¡Algo salió mal!"
+  },
+  "IndexPage": {
+    "description": "Este es un ejemplo básico que demuestra el uso de <code>next-intl</code> con el enrutador de aplicaciones Next.js. Intente cambiar la configuración regional en la esquina superior derecha y observe cómo cambia el contenido.",
+    "title": "ejemplo de next-intl"
+  },
+  "LocaleLayout": {
+    "title": "ejemplo de next-intl"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, de {Deutsch} en {English} es {Español} other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "ejemplo de next-intl"
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "pathnames": "Nombres de ruta"
+  },
+  "NotFoundPage": {
+    "description": "Revise la barra de direcciones del navegador o use la navegación para ir a una página conocida page.",
+    "title": "Página no encontrada"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Más información sobre next-intl en la documentación oficial.",
+        "href": "https://next-intl.dev",
+        "title": "Documentación"
+      },
+      "source": {
+        "description": "Explora el código fuente de este ejemplo en GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Código fuente"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Las rutas de acceso también están internacionalizadas.</p><p>Si usas el inglés como idioma predeterminado, verás <code>/en/pathnames</code> en la barra de direcciones del navegador. página.</p><p>Si cambia la configuración regional a alemán, la URL se localizará como corresponde (<code>/de/pfadnamen</code>).</p>",
+    "title": "Nombres de ruta"
+  }
+}
