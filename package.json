@@ -1,6 +1,5 @@
 {
   "name": "sonner-next-intl-root",
-  "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -9,6 +8,27 @@
     "check-types": "turbo run check-types",
     "changesets": "pnpm dlx @changesets/cli"
   },
+  "author": {
+    "email": "corex4dev@gmail.com",
+    "name": "CoreX4Dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex4dev/sonner-next-intl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/corex4dev/sonner-next-intl/issues"
+  },
+  "homepage": "https://github.com/corex4dev/sonner-next-intl#readme",
+  "license": "MIT",
+  "keywords": [
+    "corex4dev",
+    "javascript",
+    "typescript",
+    "sonner",
+    "next-intl",
+    "utils"
+  ],
   "devDependencies": {
     "prettier": "^3.6.2",
     "turbo": "^2.6.1",

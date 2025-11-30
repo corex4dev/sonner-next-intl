@@ -1,3 +1,9 @@
+/**
+ * Type utilities powering translation-typed toasts for Sonner + next-intl.
+ *
+ * @module types
+ */
+
 import type {
   Formats,
   MarkupTagsFunction,
@@ -9,14 +15,31 @@ import type {
 } from "next-intl";
 import type { ExternalToast } from "sonner";
 
+/**
+ * Alias for message dictionaries used by next-intl.
+ *
+ * @template M - Messages map.
+ */
 export type LocalMessages<M extends Record<string, any> = Record<string, any>> =
   M;
 
+/**
+ * Extracts messages inside a specific namespace.
+ *
+ * @template M - Messages map.
+ * @template N - Optional namespace key.
+ */
 export type SubMessages<
   M extends Record<string, any>,
   N extends NamespaceKeys<M, NestedKeyOf<M>> | undefined,
 > = [N] extends [undefined] ? M : NestedValueOf<{ "!": M }, `!.${N}`>;
 
+/**
+ * Utility to extract all message keys of a namespace.
+ *
+ * @template TranslatorMessages - Message map.
+ * @template Namespace - Namespace key.
+ */
 type NamespacedMessageKeys<
   TranslatorMessages extends LocalMessages,
   Namespace extends NamespaceKeys<
@@ -36,12 +59,25 @@ type NamespacedMessageKeys<
   >
 >;
 
+/**
+ * Configuration options for initializing translated toast utilities.
+ *
+ * @template M - Messages map.
+ */
 export type ConfigOptions<M extends Record<string, any>> = {
+  /** Root namespace for notifications. */
   notificationsRoot?: NamespaceKeys<M, NestedKeyOf<M>>;
 };
 
+/**
+ * Describes a translation-ready message used by a toast.
+ *
+ * @template T - Messages map.
+ */
 export type TranslatedMessage<T extends Record<string, any>> = {
+  /** Message key including namespace. */
   key: NamespacedMessageKeys<T>;
+  /** Optional formatting rules. */
   formats?: Formats;
 } & (
   | {
@@ -67,6 +103,11 @@ export type TranslatedMessage<T extends Record<string, any>> = {
     }
 );
 
+/**
+ * Toast data including translated description.
+ *
+ * @template T - Messages map.
+ */
 export type TranslatedExternalToast<T extends Record<string, any>> = Omit<
   ExternalToast,
   "description"
@@ -74,19 +115,40 @@ export type TranslatedExternalToast<T extends Record<string, any>> = Omit<
   description?: TranslatedMessage<T>;
 };
 
+/** Promise-like utility type. */
 export type PromiseT<Data = any> = Promise<Data> | (() => Promise<Data>);
+
+/**
+ * Result structure returned from promise-based translated toasts.
+ *
+ * @template T - Messages map.
+ */
 export interface PromiseIExtendedResult<T extends Record<string, any>>
   extends TranslatedExternalToast<T> {
   message: TranslatedMessage<T>;
 }
+
+/**
+ * Promise-based result factory or resolved structure.
+ *
+ * @template M - Messages map.
+ * @template Data - Payload.
+ */
 export type PromiseTExtendedResult<M extends LocalMessages, Data = any> =
   | PromiseIExtendedResult<M>
   | ((
       data: Data
     ) => PromiseIExtendedResult<M> | Promise<PromiseIExtendedResult<M>>);
 
+/** External toast without description. */
 export type PromiseExternalToast = Omit<ExternalToast, "description">;
 
+/**
+ * Configuration for toast.promise with translated messages.
+ *
+ * @template T - Messages map.
+ * @template ToastData - Payload.
+ */
 export type PromiseData<
   T extends Record<string, any>,
   ToastData = any,
@@ -98,6 +160,11 @@ export type PromiseData<
   finally?: () => void | Promise<void>;
 };
 
+/**
+ * API for generating translated toasts.
+ *
+ * @template T - Messages map.
+ */
 export type TranslatedToast<T extends Record<string, any>> = ((
   message: TranslatedMessage<T>,
   data?: TranslatedExternalToast<T>
@@ -138,5 +205,4 @@ export type TranslatedToast<T extends Record<string, any>> = ((
     message: TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
-  check: (params: { test: NamespacedMessageKeys<T> }) => void;
 };

@@ -8,9 +8,27 @@
     "build": "tsup src/index.ts --format cjs --dts",
     "dev": "pnpm build --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "email": "corex4dev@gmail.com",
+    "name": "CoreX4Dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corex4dev/sonner-next-intl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/corex4dev/sonner-next-intl/issues"
+  },
+  "homepage": "https://github.com/corex4dev/sonner-next-intl#readme",
+  "license": "MIT",
+  "keywords": [
+    "corex4dev",
+    "javascript",
+    "typescript",
+    "sonner",
+    "next-intl",
+    "utils"
+  ],
   "peerDependencies": {
     "next-intl": "^4.5.6",
     "sonner": "^2.0.7",
