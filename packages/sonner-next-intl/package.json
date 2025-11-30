@@ -1,6 +1,6 @@
 {
   "name": "sonner-next-intl",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/corex4dev/sonner-next-intl/issues"
   },
-  "homepage": "https://github.com/corex4dev/sonner-next-intl#readme",
+  "homepage": "https://sonner-next-intl.vercel.app",
   "license": "MIT",
   "keywords": [
     "corex4dev",

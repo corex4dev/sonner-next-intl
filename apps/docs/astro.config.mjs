@@ -8,9 +8,11 @@ import starlightThemeNext from 'starlight-theme-next';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://sonner-next-intl.vercel.app",
 	integrations: [
 		starlight({
 			title: 'sonner-next-intl',
+			logo: { src: "./src/assets/logo.webp" },
 			customCss: ["./src/styles/custom.css"],
 			plugins: [
 				starlightTypeDocPlugin({
