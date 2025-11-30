@@ -78,6 +78,7 @@ export default defineConfig({
 			],
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/corex4dev/sonner-next-intl' },
+				{ icon: 'npm', label: 'npm', href: 'https://www.npmjs.com/package/sonner-next-intl' },
 				{ icon: 'email', label: 'Email', href: 'mailto:corex4dev@gmail.com' },
 			],
 		}),
