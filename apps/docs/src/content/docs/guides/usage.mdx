@@ -1,0 +1,103 @@
+---
+title: Toast Provider (Client Component)
+---
+
+import { Tabs, TabItem, Code } from "@astrojs/starlight/components";
+
+## Provider: wiring Sonner + translator
+
+The wrapper expects a context provider that exposes three things: Sonner's `toast`, `messages`, and a `translator` instance from `next-intl`. The package exposes `SonnerNextIntlProvider` for convenience. You only need to wrap the portion of your tree that will use translated toasts.
+
+> **Important**: Sonner is a client-side UI utility. Provide the `SonnerNextIntlProvider` from a client component (or inside `app` directory client providers). The translator and messages must be the concrete instances/objects for the current locale.
+
+Create a bridge component:
+
+<Tabs>
+  <TabItem label="./src/components/ToastProvider.tsx">
+  <Code lang="tsx" code={
+`
+  "use client";
+
+  import { SonnerNextIntlProvider } from "sonner-next-intl";
+  import { useMessages, useTranslations } from "next-intl";
+  import { toast } from "sonner";
+
+  export default function ToastProvider({ children }) {
+    const translator = useTranslations();
+    const messages = useMessages();
+
+    return (
+      <SonnerNextIntlProvider
+        toast={toast}
+        messages={messages}
+        translator={translator}
+      >
+        {children}
+      </SonnerNextIntlProvider>
+    ); 
+  }
+
+`
+}/>
+
+  </TabItem>
+  <TabItem label="./src/app/[locale]/layout.tsx">
+  <Code lang="ts" code={
+`
+  import { Toaster } from "sonner";
+  import SonnerNextIntlProvider from "@/components/SonnerNextIntlProvider";
+  
+  export default async function RootLayout({
+    children,
+    params,
+  }: Readonly<{
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }>) {
+    const { locale } = await params;
+    if (!hasLocale(routing.locales, locale)) {
+      notFound();
+    }
+
+    // Enable static rendering
+    setRequestLocale(locale);
+
+    return (
+      <html className="h-full" lang={locale}>
+        <body className={\`flex h-full flex-col \${inter.className}\`}>
+          <NextIntlClientProvider>
+            <SonnerNextIntlProvider>
+              <Toaster closeButton richColors />
+              <Navigation />
+              {children}
+            </SonnerNextIntlProvider>
+          </NextIntlClientProvider>
+        </body>
+      </html> 
+    );
+  }
+`
+}/>
+
+  </TabItem>
+</Tabs>
+
+You can keep `Sonner`'s `<Toaster />` (or similar UI mount) elsewhere, the wrapper only needs the `toast` API — it does not render UI itself.
+
+
+---
+
+## Creating the typed hook
+
+Create a typed version of the hook once (per project) so your translation keys are strongly typed across the app.
+
+<Code title="./src/hooks/useTranslatedToast" lang="ts" code={`
+import { createUseTranslatedToast } from "sonner-next-intl";
+import messages from "../messages/en.json";
+
+const useTranslatedToast = createUseTranslatedToast<typeof messages>();
+
+export { useTranslatedToast };
+`}/>
+
+Now you can import `useTranslatedToast` in any component and it will be typed to `AppMessages`.

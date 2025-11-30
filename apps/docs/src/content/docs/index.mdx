@@ -1,0 +1,56 @@
+---
+title: sonner-next-intl
+description: Typed, translated toast utilities for Next.js apps using Sonner and next-intl.
+template: splash
+hero:
+  tagline: Strongly typed translated toasts for modern Next.js apps.
+  image:
+    file: ../../assets/logo.webp
+  actions:
+    - text: Get Started
+      link: /guides/overview
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## What is this package?
+
+This wrapper integrates **Sonner** (toast notifications) with **next-intl** (internationalization) to provide:
+
+- 🔒 **Fully typed translation keys** for toast messages
+- 🌐 Automatic `next-intl` translation resolution
+- 🧩 Optional namespace scoping with `notificationsRoot`
+- ⚡ Drop-in Sonner compatibility (same API — translated!)
+
+Use it in **Next.js 15+** App Router projects to keep notifications clean, localized, and type‑safe.
+
+<br />
+<br />
+<br />
+---
+<br />
+
+## Next steps
+
+<CardGrid stagger>
+  <Card title="Install & setup" icon="npm">
+    Learn how to install the wrapper and connect it to your next-intl provider.
+  </Card>
+
+<Card title="Create your typed hook" icon="seti:html">
+  See how to define `useTranslatedToast` once for your project.
+</Card>
+
+<Card title="Use translated toasts" icon="translate">
+  Explore examples for success, error, loading, rich messages, and promises.
+</Card>
+
+<Card title="Namespace your notifications" icon="seti:folder">
+  Use `notificationsRoot` to keep translation keys clean and consistent.
+</Card>
+
+  <Card title="See API reference" icon="open-book">
+    Understand the wrapper's types, interfaces, and toast method behavior.
+  </Card>
+</CardGrid>

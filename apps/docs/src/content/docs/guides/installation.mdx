@@ -1,0 +1,18 @@
+---
+title: Installation
+---
+
+import { PackageManagers } from "starlight-package-managers";
+import { Steps } from "@astrojs/starlight/components";
+
+# Installation
+
+<Steps>
+1. Install Sonner and next-intl as usual if not already installed <PackageManagers pkg="sonner next-intl" type="install" /><br/>
+2. Set up next-intl in your project. Read more about this in their <a href="https://next-intl.dev/docs/getting-started/app-router" target="_blank">guide</a><br/><br/>
+3. Install this package <PackageManagers pkg="sonner-next-intl" type="install" />
+</Steps>
+
+
+
+Add this wrapper package to your project (either as a local module or published package). For the rest of this doc we assume you have access to: `createUseTranslatedToast` and `SonnerNextIntlProvider` from the package.
