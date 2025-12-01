@@ -7,7 +7,7 @@ title: "PromiseData"
 
 > **PromiseData**\<`T`, `ToastData`\> = [`PromiseExternalToast`](/reference/type-aliases/promiseexternaltoast/) & `object`
 
-Defined in: [packages/sonner-next-intl/src/types.ts:152](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L152)
+Defined in: [packages/sonner-next-intl/src/types.ts:152](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L152)
 
 Configuration for toast.promise with translated messages.
 

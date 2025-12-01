@@ -7,7 +7,7 @@ title: "createUseTranslatedToast"
 
 > **createUseTranslatedToast**\<`M`\>(): \<`N`\>(`options?`) => `object`
 
-Defined in: [packages/sonner-next-intl/src/index.ts:45](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/index.ts#L45)
+Defined in: [packages/sonner-next-intl/src/index.ts:45](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/index.ts#L45)
 
 Factory that creates a `useTranslatedToast` hook for a particular messages
 shape `M`. You should call this once per project/library where `M` represents

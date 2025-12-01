@@ -81,22 +81,22 @@ export type TranslatedMessage<T extends Record<string, any>> = {
   formats?: Formats;
 } & (
   | {
-      type: "regular";
+      type?: "regular" | never;
       data?: Record<string, string | number | Date> | undefined;
     }
   | {
-      type: "raw";
+      type?: "raw";
       data?: never;
       formats?: never;
     }
   | {
-      type: "rich";
+      type?: "rich";
       data?:
         | Record<string, string | number | RichTagsFunction | Date>
         | undefined;
     }
   | {
-      type: "markup";
+      type?: "markup";
       data?:
         | Record<string, string | number | Date | MarkupTagsFunction>
         | undefined;

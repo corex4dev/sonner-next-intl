@@ -7,7 +7,7 @@ title: "SonnerNextIntlProvider"
 
 > **SonnerNextIntlProvider**\<`M`\>(`props`): `Element`
 
-Defined in: [packages/sonner-next-intl/src/context.tsx:98](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/context.tsx#L98)
+Defined in: [packages/sonner-next-intl/src/context.tsx:98](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/context.tsx#L98)
 
 Provider component that wires `sonner` plus `next-intl` translator into the
 React context for descendant components to consume via `useConfig`.

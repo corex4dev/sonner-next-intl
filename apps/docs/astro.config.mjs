@@ -71,7 +71,7 @@ export default defineConfig({
 					}
 				}),
 				starlightPageActions({
-					baseUrl: "tbd",
+					baseUrl: "https://sonner-next-intl.vercel.app",
 					prompt: `Read {url} and explain its main points briefly.`
 				}),
 				starlightThemeNext()

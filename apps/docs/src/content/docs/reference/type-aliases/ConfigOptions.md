@@ -7,7 +7,7 @@ title: "ConfigOptions"
 
 > **ConfigOptions**\<`M`\> = `object`
 
-Defined in: [packages/sonner-next-intl/src/types.ts:67](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L67)
+Defined in: [packages/sonner-next-intl/src/types.ts:67](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L67)
 
 Configuration options for initializing translated toast utilities.
 
@@ -25,6 +25,6 @@ Messages map.
 
 > `optional` **notificationsRoot**: `NamespaceKeys`\<`M`, `NestedKeyOf`\<`M`\>\>
 
-Defined in: [packages/sonner-next-intl/src/types.ts:69](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L69)
+Defined in: [packages/sonner-next-intl/src/types.ts:69](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L69)
 
 Root namespace for notifications.

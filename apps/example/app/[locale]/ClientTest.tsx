@@ -13,7 +13,7 @@ const ClientTest = () => {
       <button
         onClick={() => {
           toast(
-            { key: "title", type: "regular" },
+            { key: "title" },
             {
               description: {
                 key: "description",

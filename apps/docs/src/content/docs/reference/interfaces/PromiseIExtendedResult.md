@@ -5,7 +5,7 @@ prev: false
 title: "PromiseIExtendedResult"
 ---
 
-Defined in: [packages/sonner-next-intl/src/types.ts:126](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L126)
+Defined in: [packages/sonner-next-intl/src/types.ts:126](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L126)
 
 Result structure returned from promise-based translated toasts.
 
@@ -111,7 +111,7 @@ Defined in: node\_modules/.pnpm/sonner@2.0.7\_react-dom@19.2.0\_react@19.2.0\_\_
 
 > `optional` **description**: [`TranslatedMessage`](/reference/type-aliases/translatedmessage/)\<`T`\>
 
-Defined in: [packages/sonner-next-intl/src/types.ts:115](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L115)
+Defined in: [packages/sonner-next-intl/src/types.ts:115](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L115)
 
 #### Inherited from
 
@@ -195,7 +195,7 @@ Defined in: node\_modules/.pnpm/sonner@2.0.7\_react-dom@19.2.0\_react@19.2.0\_\_
 
 > **message**: [`TranslatedMessage`](/reference/type-aliases/translatedmessage/)\<`T`\>
 
-Defined in: [packages/sonner-next-intl/src/types.ts:128](https://github.com/corex4dev/sonner-next-intl/blob/b92a7dfb0de60c889b4f84507b68d987462f35c7/packages/sonner-next-intl/src/types.ts#L128)
+Defined in: [packages/sonner-next-intl/src/types.ts:128](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L128)
 
 ***
 
