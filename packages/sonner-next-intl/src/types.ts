@@ -112,7 +112,7 @@ export type TranslatedExternalToast<T extends Record<string, any>> = Omit<
   ExternalToast,
   "description"
 > & {
-  description?: TranslatedMessage<T>;
+  description?: string | TranslatedMessage<T>;
 };
 
 /** Promise-like utility type. */
@@ -125,7 +125,7 @@ export type PromiseT<Data = any> = Promise<Data> | (() => Promise<Data>);
  */
 export interface PromiseIExtendedResult<T extends Record<string, any>>
   extends TranslatedExternalToast<T> {
-  message: TranslatedMessage<T>;
+  message: string | TranslatedMessage<T>;
 }
 
 /**
@@ -153,7 +153,7 @@ export type PromiseData<
   T extends Record<string, any>,
   ToastData = any,
 > = PromiseExternalToast & {
-  loading?: TranslatedMessage<T>;
+  loading?: string | TranslatedMessage<T>;
   success?: PromiseTExtendedResult<T, ToastData>;
   error?: PromiseTExtendedResult<T>;
   description?: PromiseTExtendedResult<T>;
@@ -166,23 +166,23 @@ export type PromiseData<
  * @template T - Messages map.
  */
 export type TranslatedToast<T extends Record<string, any>> = ((
-  message: TranslatedMessage<T>,
+  message: string | TranslatedMessage<T>,
   data?: TranslatedExternalToast<T>
 ) => string | number) & {
   success: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
   info: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
   warning: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
   error: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
   custom: (
@@ -190,7 +190,7 @@ export type TranslatedToast<T extends Record<string, any>> = ((
     data?: TranslatedExternalToast<T>
   ) => string | number;
   message: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
   promise: <ToastData>(
@@ -202,7 +202,7 @@ export type TranslatedToast<T extends Record<string, any>> = ((
     | { unwrap: () => Promise<ToastData> };
   dismiss: (id?: number | string) => string | number;
   loading: (
-    message: TranslatedMessage<T>,
+    message: string | TranslatedMessage<T>,
     data?: TranslatedExternalToast<T>
   ) => string | number;
 };

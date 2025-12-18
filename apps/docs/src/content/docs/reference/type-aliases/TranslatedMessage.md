@@ -7,7 +7,7 @@ title: "TranslatedMessage"
 
 > **TranslatedMessage**\<`T`\> = `object` & \{ `data?`: `Record`\<`string`, `string` \| `number` \| `Date`\>; `type?`: `"regular"` \| `never`; \} \| \{ `data?`: `never`; `formats?`: `never`; `type?`: `"raw"`; \} \| \{ `data?`: `Record`\<`string`, `string` \| `number` \| `RichTagsFunction` \| `Date`\>; `type?`: `"rich"`; \} \| \{ `data?`: `Record`\<`string`, `string` \| `number` \| `Date` \| `MarkupTagsFunction`\>; `type?`: `"markup"`; \}
 
-Defined in: [packages/sonner-next-intl/src/types.ts:77](https://github.com/corex4dev/sonner-next-intl/blob/bb285e98b60d7da52c9521a5f5e2eecb85012b95/packages/sonner-next-intl/src/types.ts#L77)
+Defined in: [packages/sonner-next-intl/src/types.ts:77](https://github.com/corex4dev/sonner-next-intl/blob/5e49049622b92ee2f2cb88aa4ed3f4a4111707c9/packages/sonner-next-intl/src/types.ts#L77)
 
 Describes a translation-ready message used by a toast.
 

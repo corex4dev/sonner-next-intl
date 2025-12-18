@@ -119,29 +119,41 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
      */
     const wrapDescription = (d: any) =>
       d?.description
-        ? translate(t as any, d.description, options?.notificationsRoot as any)
+        ? typeof d.description === "string"
+          ? d.description
+          : translate(
+              t as any,
+              d.description,
+              options?.notificationsRoot as any
+            )
         : undefined;
 
     // Each of the following functions maps the translated-typed API to sonner.
 
     const success: TranslatedToast<Sub>["success"] = (m, d) =>
       sonner.success(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: d?.description
-            ? translate(
-                t as any,
-                d.description as any,
-                options?.notificationsRoot as any
-              )
+            ? typeof d.description === "string"
+              ? d.description
+              : translate(
+                  t as any,
+                  d.description as any,
+                  options?.notificationsRoot as any
+                )
             : undefined,
         }
       );
 
     const info: TranslatedToast<Sub>["info"] = (m, d) =>
       sonner.info(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: wrapDescription(d),
@@ -150,7 +162,9 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
 
     const warning: TranslatedToast<Sub>["warning"] = (m, d) =>
       sonner.warning(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: wrapDescription(d),
@@ -159,7 +173,9 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
 
     const error: TranslatedToast<Sub>["error"] = (m, d) =>
       sonner.error(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: wrapDescription(d),
@@ -174,7 +190,9 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
 
     const message: TranslatedToast<Sub>["message"] = (m, d) =>
       sonner.message(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: wrapDescription(d),
@@ -185,53 +203,67 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
       sonner.promise(p as any, {
         ...d,
         loading: d?.loading
-          ? translate(
-              t as any,
-              d.loading as any,
-              options?.notificationsRoot as any
-            )
+          ? typeof d.loading === "string"
+            ? d.loading
+            : translate(
+                t as any,
+                d.loading as any,
+                options?.notificationsRoot as any
+              )
           : undefined,
         success: async (data: any) =>
           d?.success
             ? typeof d.success === "function"
-              ? translate(
-                  t as any,
-                  (await d.success(data)).message as any,
-                  options?.notificationsRoot as any
-                )
-              : translate(
-                  t as any,
-                  (d.success as any).message as any,
-                  options?.notificationsRoot as any
-                )
+              ? typeof (await d.success(data)).message === "string"
+                ? (await d.success(data)).message
+                : translate(
+                    t as any,
+                    (await d.success(data)).message as any,
+                    options?.notificationsRoot as any
+                  )
+              : typeof (d.success as any).message === "string"
+                ? (d.success as any).message
+                : translate(
+                    t as any,
+                    (d.success as any).message as any,
+                    options?.notificationsRoot as any
+                  )
             : undefined,
         error: async (data: any) =>
           d?.error
             ? typeof d.error === "function"
-              ? translate(
-                  t as any,
-                  (await d.error(data)).message as any,
-                  options?.notificationsRoot as any
-                )
-              : translate(
-                  t as any,
-                  (d.error as any).message as any,
-                  options?.notificationsRoot as any
-                )
+              ? typeof (await d.error(data)).message === "string"
+                ? (await d.error(data)).message
+                : translate(
+                    t as any,
+                    (await d.error(data)).message as any,
+                    options?.notificationsRoot as any
+                  )
+              : typeof (d.error as any).message === "string"
+                ? (d.error as any).message
+                : translate(
+                    t as any,
+                    (d.error as any).message as any,
+                    options?.notificationsRoot as any
+                  )
             : undefined,
         description: async (data: any) =>
           d?.description
             ? typeof d.description === "function"
-              ? translate(
-                  t as any,
-                  (await d.description(data)).message as any,
-                  options?.notificationsRoot as any
-                )
-              : translate(
-                  t as any,
-                  (d.description as any).message as any,
-                  options?.notificationsRoot as any
-                )
+              ? typeof (await d.description(data)).message === "string"
+                ? (await d.description(data)).message
+                : translate(
+                    t as any,
+                    (await d.description(data)).message as any,
+                    options?.notificationsRoot as any
+                  )
+              : typeof (d.description as any).message === "string"
+                ? (d.description as any).message
+                : translate(
+                    t as any,
+                    (d.description as any).message as any,
+                    options?.notificationsRoot as any
+                  )
             : undefined,
       });
 
@@ -239,7 +271,9 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
 
     const loading: TranslatedToast<Sub>["loading"] = (m, d) =>
       sonner.loading(
-        translate(t as any, m as any, options?.notificationsRoot as any),
+        typeof m === "string"
+          ? m
+          : translate(t as any, m as any, options?.notificationsRoot as any),
         {
           ...d,
           description: wrapDescription(d),
@@ -256,7 +290,9 @@ const createUseTranslatedToast = <M extends Record<string, any>>() => {
     const toast: TranslatedToast<Sub> = Object.assign(
       (m: Parameters<TranslatedToast<Sub>>[0], d?: any) =>
         sonner(
-          translate(t as any, m as any, options?.notificationsRoot as any),
+          typeof m === "string"
+            ? m
+            : translate(t as any, m as any, options?.notificationsRoot as any),
           {
             ...d,
             description: wrapDescription(d),

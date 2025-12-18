@@ -40,6 +40,7 @@ const ClientTest = () => {
       >
         {t("TriggerToast")}
       </button>
+      <button onClick={() => toast("Hello anyways")}>Toast no key</button>
     </>
   );
 };

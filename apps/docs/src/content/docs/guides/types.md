@@ -6,7 +6,7 @@ title: Types
 
 - `createUseTranslatedToast<M>()` — _factory_ that returns a typed `useTranslatedToast` hook bound to your app messages type `M`.
 - `useTranslatedToast(options?)` — hook returned by factory; returns `{ toast }` where `toast` has the same methods as Sonner but expects `TranslatedMessage<T>` objects.
-- `TranslatedMessage<T>` — the descriptor you pass instead of a string. Shape:
+- `TranslatedMessage<T>` — a string or the descriptor you pass instead of a string. Shape:
 
   ```ts
   { key: NamespacedKey, type: 'regular' | 'raw' | 'rich' | 'markup', data?: Record<string, any>, formats?: Formats }
